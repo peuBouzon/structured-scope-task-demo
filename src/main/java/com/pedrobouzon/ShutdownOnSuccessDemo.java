@@ -7,7 +7,6 @@ import java.util.concurrent.StructuredTaskScope;
 public class ShutdownOnSuccessDemo {
     private static final Random random = new Random();
     public static void main(String[] args) {
-        // ShutdownOnSuccess
         try (var scope = new StructuredTaskScope.ShutdownOnSuccess<String>()) {
           scope.fork(ShutdownOnSuccessDemo::scheduleSoccerWithFriends);
           scope.fork(ShutdownOnSuccessDemo::scheduleMeetWithGirlfriend);
